@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import Layout from './componentes/layout/layout';
 
 import PrivateRoute from './componentes/authRoutes/privateRoutes';
+import PublicRoute from './componentes/authRoutes/publicRoutes';
 
 import Home from './componentes/home';
 import Login from './componentes/login';
@@ -24,10 +25,11 @@ export default function Rotas(props) {
                 <Switch>
 
                     <PrivateRoute {...props} path="/painel" exact component={Painel} />
-                    <Route path="/" exact component={Home}/>
-                    <Route path="/login" exact component={Login} />
+                    <PrivateRoute {...props} path="/categorias" exact component={Categorias} />
 
-                    <Route path="/categorias" exact component={Categorias} />
+                    <PublicRoute  {...props} restricted={false} path="/" exact component={Home}/>
+                    <PublicRoute  {...props} restricted={true} path="/login" exact component={Login} />
+
                     <Route path="/categorias/adicionar" component={AdicionarCategoria} />
                     <Route path="/categorias/editar" component={EditarCategoria} />
                     <Route path="/categorias/detalhes/:id" component={DetalhesCategoria} />
