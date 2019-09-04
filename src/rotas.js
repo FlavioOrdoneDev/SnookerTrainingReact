@@ -2,6 +2,8 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Layout from './componentes/layout/layout';
 
+import PrivateRoute from './componentes/authRoutes/privateRoutes';
+
 import Home from './componentes/home';
 import Login from './componentes/login';
 import Painel from './componentes/admin/painel';
@@ -16,13 +18,14 @@ import AdicionarRotinasTemplate from './componentes/rotinas-template/adicionar';
 import EditarRotinasTemplate from './componentes/rotinas-template/editar';
 import DetalhesRotinasTemplate from './componentes/rotinas-template/detalhes';
 
-export default function Rotas() {
+export default function Rotas(props) {
     return (
             <Layout>
                 <Switch>
+
+                    <PrivateRoute {...props} path="/painel" exact component={Painel} />
                     <Route path="/" exact component={Home}/>
                     <Route path="/login" exact component={Login} />
-                    <Route path="/painel" exact component={Painel} />
 
                     <Route path="/categorias" exact component={Categorias} />
                     <Route path="/categorias/adicionar" component={AdicionarCategoria} />
