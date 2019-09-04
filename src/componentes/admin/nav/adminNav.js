@@ -8,11 +8,11 @@ const AdminNav = () => {
     const links = [
         {
             title: 'Categorias',
-            linkTo: '/admin_players'
+            linkTo: '/categorias'
         },
         {
             title: 'Rotinas',
-            linkTo: '/admin_rotinas'
+            linkTo: '/rotinasTemplate'
         },
         {
             title: 'Treinos',

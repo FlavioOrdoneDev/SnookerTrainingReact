@@ -16,7 +16,7 @@ class Header extends Component {
                             <li><a href="/rotinasTemplate">Rotinas</a></li>
                             <li><a href="/treinosTemplate">Treinos</a></li>
                             <li><a href="#">Resultados</a></li>
-                            <li><a href="#">Configurações</a></li>
+                            <li><a href="/painel">Painel Admin</a></li>
                         </ul>                
                     </div>
                 </div>
