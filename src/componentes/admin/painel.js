@@ -1,5 +1,6 @@
 import React from 'react';
 import AdminLayout from '../../componentes/layout/adminLayout';
+import './estilo.css';
 
 const Painel = () => {
     return (

@@ -2,9 +2,11 @@ import React from 'react';
 
 const Home = () => {
     return (
-        <div className="bck_blue">
-            Home      
-        </div>
+            <div className="home_wrapper">
+                <div>
+                    Snooker Training
+                </div>
+            </div>
     );
 };
 

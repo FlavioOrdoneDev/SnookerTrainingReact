@@ -15,6 +15,10 @@ const AdminNav = () => {
             linkTo: '/rotinasTemplate'
         },
         {
+            title: 'Editar Rotinas',
+            linkTo: '/rotinasTemplate/editar'
+        },
+        {
             title: 'Treinos',
             linkTo: '/admin_matches/edit_match'
         },        
