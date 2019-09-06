@@ -10,7 +10,7 @@ class EditarRotinasTemplate extends Component {
 
     state = {
         rotinaId:'',
-        formType: 'Editar Rotina',
+        formType: '',
         formError: false,
         formSuccess: '',
         categorias:[],
@@ -134,13 +134,46 @@ class EditarRotinasTemplate extends Component {
         })
     }
 
+    updateFields(rotina, categoriaOptions, categorias, type, rotinaId) {
+        const newFormdata = {
+            ...this.state.formdata
+        }
+
+        for (let key in newFormdata) {
+            if (rotina) {
+                newFormdata[key].value = rotina[key];
+                newFormdata[key].valid = true;
+            }
+            if (key === 'categoria') {
+                newFormdata[key].config.options = categoriaOptions;
+            }
+        }
+
+        this.setState({
+            rotinaId,
+            formType: type,
+            formdata: newFormdata,
+            categorias
+        })
+
+    }
+
     componentDidMount() {
              
         const rotinaId = this.props.match.params.id;
         const getCategories = (rotina, type) => {
             firebaseCategorias.once('value').then(snapshot => {
                 const categorias = firebaseLooper(snapshot);
-                console.log(categorias);
+
+                const categoriaOptions = [];
+
+                snapshot.forEach((childSnapshot) => {
+                    categoriaOptions.push({
+                        key: childSnapshot.val().nome,
+                        value: childSnapshot.val().nome
+                    })
+                });
+                this.updateFields(rotina, categoriaOptions, categorias,type, rotinaId);
             })
         }
         
