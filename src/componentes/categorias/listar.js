@@ -59,7 +59,7 @@ export default class Categorias extends Component {
     prevPage = () => {
         const { pagina } = this.state;
 
-        if (pagina == 1) 
+        if (pagina === 1) 
             return;
 
         const pageNumber = pagina - 1;
@@ -69,7 +69,7 @@ export default class Categorias extends Component {
     nextPage = () => {
         const { pagina, categoriaDetalhes } = this.state;
 
-        if (pagina == categoriaDetalhes.pages) 
+        if (pagina === categoriaDetalhes.pages) 
             return;
 
         const pageNumber = pagina + 1;
@@ -77,7 +77,7 @@ export default class Categorias extends Component {
     };
 
     render() {
-        const { categorias, pagina, categoriaDetalhes } = this.state;
+        const { categorias } = this.state;
         return (
             <div>
             <div className="header_wrapper">

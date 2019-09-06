@@ -54,5 +54,27 @@
 			"tipoMeta": "PorBolas",
 			"meta": 55.0
 		}
-	}	
+	},
+	"categorias" : {
+		"-LEkjWZ2lNF9bj8LKJHP" : {
+		  "nome" : "Positional Play",
+		  "descrição" : "Positional Play descrição"
+		},
+		"-LEkjWZQ2Otlfetr2y62" : {
+		  "nome" : "Safety",
+		  "descrição" : "Safety descrição"
+		},
+		"-LEkjWZS9pr6JW9GHwrk" : {
+		  "nome" : "Tecnique",
+		  "descrição" : "Tecnique descição"
+		},
+		"-LEkjWZS9pr6JW9GHwrl" : {
+		  "nome" : "Warm-up",
+		  "descrição" : "Warrm-up descrição"
+		},
+		"-LEkjWZTzWhJZqm-a3Sx" : {
+		  "nome" : "Long Potting",
+		  "descrição" : "Long Potting descrição"
+		}
+	}
 }

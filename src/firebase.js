@@ -17,8 +17,11 @@ const firebaseConfig = {
 
   const firebaseDB = firebase.database();
   const firebaseRotinasTemplate = firebaseDB.ref('rotinasTemplate');
+  const firebaseCategorias = firebaseDB.ref('categorias');
       
 export {
     firebase,
-    firebaseRotinasTemplate
+    firebaseRotinasTemplate,
+    firebaseCategorias,
+    firebaseDB
 }

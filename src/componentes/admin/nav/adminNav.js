@@ -8,23 +8,23 @@ const AdminNav = () => {
     const links = [
         {
             title: 'Categorias',
-            linkTo: '/categorias'
+            linkTo: '/painel/categorias'
         },
         {
             title: 'Rotinas',
-            linkTo: '/rotinasTemplate'
+            linkTo: '/painel/rotinasTemplate'
         },
         {
             title: 'Editar Rotinas',
-            linkTo: '/rotinasTemplate/editar'
+            linkTo: '/painel/rotinasTemplate/editar'
         },
         {
             title: 'Treinos',
-            linkTo: '/admin_matches/edit_match'
+            linkTo: '/painel/edit_match'
         },        
         {
             title: 'Resultados',
-            linkTo: '/admin_players/add_player'
+            linkTo: '/painel/add_player'
         }
     ]
 

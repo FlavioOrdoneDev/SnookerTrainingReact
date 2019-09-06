@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import AdminLayout from '../../layout/adminLayout';
-
 import FormField from '../../shared/formFields';
-import { Validate } from '../../shared/shared';
+import { validate } from '../../shared/shared';
+
+import { firebaseRotinasTemplate, firebaseCategorias, firebaseDB } from '../../../firebase';
+import { firebaseLooper } from '../../shared/shared';
 
 class EditarRotinasTemplate extends Component {
 
@@ -11,7 +13,7 @@ class EditarRotinasTemplate extends Component {
         formType: 'Editar Rotina',
         formError: false,
         formSuccess: '',
-        teams:[],
+        categorias:[],
         formdata: {
             nome: {
                 element:'input',
@@ -37,13 +39,13 @@ class EditarRotinasTemplate extends Component {
                     type: 'select',
                     options: [ 
                                 {
-                                    key: 'nome', value: 'Positional Play'
+                                    key: '1', value: 'Positional Play'
                                 },
                                 {
-                                   key: 'nome', value: 'Safety'
+                                   key: '2', value: 'Safety'
                                 },
                                 {
-                                   key: 'nome', value: 'Tecnique'
+                                   key: '3', value: 'Tecnique'
                                 }
                             ]
                 },
@@ -70,12 +72,23 @@ class EditarRotinasTemplate extends Component {
                 showlabel: true
             },
             tipoMeta: {
-                element:'input',
+                element:'select',
                 value:'',
                 config: {
                     label: 'Tipo de meta',
-                    name: 'tipoMeta_input',
-                    type: 'text'
+                    name: 'tipoMeta_select',
+                    type: 'select',
+                    options: [ 
+                                {
+                                    key: '1', value: 'Total de Pontos'
+                                },
+                                {
+                                   key: '2', value: 'Total de Bolas'
+                                },
+                                {
+                                   key: '3', value: 'Número de Tentativas'
+                                }
+                            ]
                 },
                 validation: {
                     required: true
@@ -100,6 +113,48 @@ class EditarRotinasTemplate extends Component {
                 showlabel: true
             },
 
+        }
+    }
+
+    updateForm(element) {
+        const newFormdata = {...this.state.formdata}
+        const newElement = {...newFormdata[element.id]}
+
+        newElement.value = element.event.target.value;
+
+        let validData = validate(newElement);
+        newElement.valid = validData[0];
+        newElement.validationMessage = validData[1];
+
+        newFormdata[element.id] = newElement;
+
+        this.setState({
+            formError: false,
+            formdata: newFormdata
+        })
+    }
+
+    componentDidMount() {
+             
+        const rotinaId = this.props.match.params.id;
+        const getCategories = (rotina, type) => {
+            firebaseCategorias.once('value').then(snapshot => {
+                const categorias = firebaseLooper(snapshot);
+                console.log(categorias);
+            })
+        }
+        
+
+        if (!rotinaId) {
+            // Adicionar rotina
+        } 
+        else {
+            firebaseDB.ref(`rotinasTemplate/${rotinaId}`).once('value')
+            .then((snapshot)=>{
+                const rotina = snapshot.val();
+
+                getCategories(rotina, 'Editar Rotina');
+            })
         }
     }
 

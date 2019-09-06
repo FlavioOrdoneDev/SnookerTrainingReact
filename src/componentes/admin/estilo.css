@@ -106,14 +106,14 @@ input[type=checkbox], .res-menu {
 }
 
 .signin_wrapper h2 {
-    font-family: 'Righteous', cursive;
+    font-family: Righteous;
     color: #2674af;
     font-size: 50px;
 }
 
 .user_dashboard {
     font-size: 60px;
-    font-family: 'Righteous', cursive;
+    font-family: Righteous;
     color: #2674af;
     text-align: center;
     margin-top: 200px;
@@ -126,7 +126,7 @@ input {
     font-size: 17px;
     padding: 8px;
     border-radius: 3px;
-    font-family: Roboto;
+    font-family: Righteous;
     font-weight: 300;
     width: 100%;
     box-sizing: border-box;

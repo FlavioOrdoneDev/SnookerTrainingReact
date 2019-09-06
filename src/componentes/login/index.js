@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import FormField from '../shared/formFields';
 import { firebase } from '../../firebase';
 import { validate } from '../shared/shared'
-import { thisTypeAnnotation } from '@babel/types';
+//import { thisTypeAnnotation } from '@babel/types';
 
 class Login extends Component {
 
