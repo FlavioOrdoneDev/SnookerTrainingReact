@@ -191,6 +191,58 @@ class EditarRotinasTemplate extends Component {
         }
     }
 
+    successForm(message) {
+        this.setState({
+            formSuccess: message
+        });
+
+        setTimeout(() => {
+            this.setState({
+                formSuccess: ''
+            });
+        }, 3000)
+    }
+
+    submitForm(event){
+        event.preventDefault();
+        
+        let dataToSubmit = {};
+        let formIsValid = true;
+
+        for(let key in this.state.formdata){
+            dataToSubmit[key] = this.state.formdata[key].value;
+            formIsValid = this.state.formdata[key].valid && formIsValid;
+        }
+
+        // Pegar dados de objetos internos
+
+        // this.state.teams.forEach((team) => {
+        //     if(team.shortName === dataToSubmit.local){
+        //         dataToSubmit['localThmb'] = team.thmb
+        //     }
+        // });
+
+        if(formIsValid){
+            if (this.state.formType === 'Editar Rotina') {
+                firebaseDB.ref(`rotinasTemplate/${this.state.rotinaId}`)
+                .update(dataToSubmit).then(() => {
+                    this.successForm('Atualizado com sucesso!');
+                }).catch((e) => {
+                    this.setState({formError: true})
+                })
+            }
+            else {
+                // Adicionar Rotina
+            }       
+
+        } 
+        else {
+            this.setState({
+                formError: true
+            })
+        }
+    }
+
     render () {
         return (
             <AdminLayout>
