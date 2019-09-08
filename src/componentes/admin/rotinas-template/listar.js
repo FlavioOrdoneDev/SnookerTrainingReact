@@ -20,6 +20,7 @@ import "./estilos/listar.css";
 class RotinasTemplate extends Component {
     state = {
         isloading: true,
+        formType: 'Rotinas',
         rotinasTemplate: []
     };
 
@@ -35,41 +36,46 @@ class RotinasTemplate extends Component {
     };
 
     mostrarRotinas = (rotinasTemplate) => (
-        <div>
+        <div className="edit_wrapper">
             <div>
-                <Paper>
-                    <Table>
-                        <TableHead>
-                            <TableRow>
-                                <TableCell>Nome</TableCell>
-                                <TableCell>Descrição</TableCell>
-                                <TableCell>Tipo Meta</TableCell>
-                                <TableCell>Meta</TableCell>
-                                <TableCell>Detalhes</TableCell>
-                                <TableCell>Editar</TableCell>
-                                <TableCell>Excluir</TableCell>
-                            </TableRow>
-                        </TableHead>
-                        <TableBody>
-                            {  this.state.rotinasTemplate ?
-                                rotinasTemplate.map( rotina => (                    
-                                    <TableRow key={ rotina.id }>
-                                        <TableCell>{ rotina.nome }</TableCell>
-                                        <TableCell>{ rotina.descricao }</TableCell>
-                                        <TableCell>{ rotina.tipoMeta }</TableCell>
-                                        <TableCell>{ rotina.meta }</TableCell>
-                                        <TableCell><Link to={`/painel/rotinasTemplate/detalhes/${rotina.id}`}>Detalhes</Link></TableCell>
-                                        <TableCell><Link to={`/painel/rotinasTemplate/editar/${rotina.id}`}>Editar</Link></TableCell>
-                                        <TableCell><Link to={`/painel/rotinasTemplate/editar/${rotina.id}`}>Excluir</Link></TableCell>
-                                    </TableRow>
-                                ))
-                                : null
-                            }
-                        </TableBody>
-                    </Table>
-                </Paper>
+                <h2>
+                    { this.state.formType }
+                </h2>
+                <div className="table_wrapper">
+                    <Paper>
+                        <Table>
+                            <TableHead>
+                                <TableRow>
+                                    <TableCell>Nome</TableCell>
+                                    <TableCell>Descrição</TableCell>
+                                    <TableCell>Tipo Meta</TableCell>
+                                    <TableCell>Meta</TableCell>
+                                    <TableCell>Detalhes</TableCell>
+                                    <TableCell>Editar</TableCell>
+                                    <TableCell>Excluir</TableCell>
+                                </TableRow>
+                            </TableHead>
+                            <TableBody>
+                                {  this.state.rotinasTemplate ?
+                                    rotinasTemplate.map( rotina => (                    
+                                        <TableRow key={ rotina.id }>
+                                            <TableCell>{ rotina.nome }</TableCell>
+                                            <TableCell>{ rotina.descricao }</TableCell>
+                                            <TableCell>{ rotina.tipoMeta }</TableCell>
+                                            <TableCell>{ rotina.meta }</TableCell>
+                                            <TableCell><Link to={`/painel/rotinasTemplate/detalhes/${rotina.id}`}>Detalhes</Link></TableCell>
+                                            <TableCell><Link to={`/painel/rotinasTemplate/editar/${rotina.id}`}>Editar</Link></TableCell>
+                                            <TableCell><Link to={`/painel/rotinasTemplate/editar/${rotina.id}`}>Excluir</Link></TableCell>
+                                        </TableRow>
+                                    ))
+                                    : null
+                                }
+                            </TableBody>
+                        </Table>
+                    </Paper>
+                </div>
             </div>
-        </div>         
+        </div>      
     )
     
         

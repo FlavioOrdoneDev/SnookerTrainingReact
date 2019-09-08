@@ -7,6 +7,10 @@ const AdminNav = () => {
 
     const links = [
         {
+            title: 'Voltar',
+            linkTo: '/'
+        },
+        {
             title: 'Categorias',
             linkTo: '/painel/categorias'
         },

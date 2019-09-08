@@ -250,57 +250,59 @@ class EditarRotinasTemplate extends Component {
     render () {
         return (
             <AdminLayout>
-                <div className="editmatch_dialog_wrapper">
-                    <h2>
-                        { this.state.formType }
-                    </h2>
+                <div className="edit_wrapper">
                     <div>
-                        <form onSubmit={(event)=> this.onSubmitForm(event)}>
-                        <FormField
-                            id={'nome'}
-                            formdata={this.state.formdata.nome}
-                            change={(element)=> this.updateForm(element)}
-                        />
+                        <h2>
+                            { this.state.formType }
+                        </h2>
+                        <div>
+                            <form onSubmit={(event)=> this.onSubmitForm(event)}>
+                            <FormField
+                                id={'nome'}
+                                formdata={this.state.formdata.nome}
+                                change={(element)=> this.updateForm(element)}
+                            />
 
-                        <FormField
-                            id={'categoria'}
-                            formdata={this.state.formdata.categoria}
-                            change={(element)=> this.updateForm(element)}
-                        />   
+                            <FormField
+                                id={'categoria'}
+                                formdata={this.state.formdata.categoria}
+                                change={(element)=> this.updateForm(element)}
+                            />   
 
-                        <FormField
-                            id={'descricao'}
-                            formdata={this.state.formdata.descricao}
-                            change={(element)=> this.updateForm(element)}
-                        />
+                            <FormField
+                                id={'descricao'}
+                                formdata={this.state.formdata.descricao}
+                                change={(element)=> this.updateForm(element)}
+                            />
 
-                        <FormField
-                            id={'tipoMeta'}
-                            formdata={this.state.formdata.tipoMeta}
-                            change={(element)=> this.updateForm(element)}
-                        />
+                            <FormField
+                                id={'tipoMeta'}
+                                formdata={this.state.formdata.tipoMeta}
+                                change={(element)=> this.updateForm(element)}
+                            />
 
-                        <FormField
-                            id={'meta'}
-                            formdata={this.state.formdata.meta}
-                            change={(element)=> this.updateForm(element)}
-                        />
+                            <FormField
+                                id={'meta'}
+                                formdata={this.state.formdata.meta}
+                                change={(element)=> this.updateForm(element)}
+                            />
 
-                        <div className="success_label">{this.state.formSuccess}</div>
-                        {
-                            this.state.formError ?
-                            <div className="error_label">
-                                Algo deu errado
+                            <div className="success_label">{this.state.formSuccess}</div>
+                            {
+                                this.state.formError ?
+                                <div className="error_label">
+                                    Algo deu errado
+                                </div>
+                                : null
+                            }
+                            <div className="admin_submit">
+                                <button onClick={(event) => this.submitForm(event)}>
+                                    Salvar Rotina
+                                </button>
                             </div>
-                            : null
-                        }
-                        <div className="admin_submit">
-                            <button onClick={(event) => this.submitForm(event)}>
-                                Salvar Rotina
-                            </button>
-                        </div>
 
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </AdminLayout>

@@ -5,7 +5,8 @@
 
 body {
     background: #d5d7d8;
-    height: 100vh;
+    height: 100%;
+    min-height: 100%;
     font-family: Righteous;
 }
 
@@ -40,7 +41,7 @@ a {
     font-family: Righteous;
     color: rgb(243, 235, 235); 
     font-size: 30px;
-    padding: 25px 0;
+    padding: 20px 0;
 }
 
 .banner-area {
@@ -122,12 +123,12 @@ input[type=checkbox], .res-menu {
 
 input {
     background: #fafafa;
-    border: 1px solid #e9e9e9;
-    font-size: 17px;
+    border: 1px solid #07a086;
+    font-size: 16px;
     padding: 8px;
     border-radius: 3px;
-    font-family: Righteous;
-    font-weight: 300;
+    font-family: Roboto;
+    font-weight: 500;
     width: 100%;
     box-sizing: border-box;
 }
@@ -135,7 +136,7 @@ input {
 select {
     font-size: 16px;
     height: 38px;
-    border: 1px solid #e9e9e9;
+    border: 1px solid #07a086;
     border-radius: 3px;
     width: 100%;
 }
@@ -164,11 +165,13 @@ button {
 }
 
 .label_inputs {
-    font-size: 20px;
+    font-size: 18px;
+    color: #03705e;
+    font-family: Roboto;
     margin: 10px 0px;
-    font-weight: 300;
-    background: #e5f4ff;
-    padding: 10px;
+    font-weight: 500;
+    /* background: #03705e; */
+    padding: 0px;
     display: inline-block;
 }
 
@@ -225,19 +228,19 @@ button {
 }
 
 .admin_container h2 {
-    margin: 0px 0px 50px 0px;
-    border-bottom: 1px solid #dbdbdb;
+    margin: 0px 0px 30px 0px;
+    border-bottom: 1px solid #07a086;
     color: #414141;
-    font-size: 40px;
+    font-size: 35px;
+    font-family: Roboto;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: left;
 }
 
-.editmatch_dialog_wrapper,
-.editplayers_dialog_wrapper {
-    padding: 20px;
-    width: 600px;
-}
-
- 
 .select_team_layout .wrapper{
     display: flex;
 }
@@ -259,3 +262,33 @@ button {
     margin: 40px 0px;
     background: #009688;
 }
+
+.table_wrapper {
+    padding: 0px;
+}
+
+/* .editmatch_dialog_wrapper,
+.editplayers_dialog_wrapper {
+    padding: 20px;
+    width: 600px;
+} */
+
+
+.edit_wrapper {
+    /*  */
+    
+    height: 100%;
+    min-height: 100%;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+.edit_wrapper div {
+    /* margin: 0px 30px 0px 30px; */
+    width: 97%;
+    /* border: 1px solid rgba(0, 0, 0, .3) */
+  }
