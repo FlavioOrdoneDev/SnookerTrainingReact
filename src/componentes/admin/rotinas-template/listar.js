@@ -36,8 +36,8 @@ class RotinasTemplate extends Component {
     };
 
     mostrarRotinas = (rotinasTemplate) => (
-        <div className="edit_wrapper">
-            <div>
+        <div className="admin_wrapper">
+            <div className="border_wrapper">
                 <h2>
                     { this.state.formType }
                 </h2>

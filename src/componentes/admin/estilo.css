@@ -241,42 +241,20 @@ button {
     justify-content: left;
 }
 
-.select_team_layout .wrapper{
-    display: flex;
-}
-
-.select_team_layout .wrapper .left {
-    flex-grow: 1;
-}
-
-.select_team_layout input[name=result_local_input],
-.select_team_layout input[name=result_away_input] {
-    width: 60px;
-    text-align: center;
-    background: #98c6e9;
-    color: #ffffff;
-}
-
 .admin_submit button {
     font-size: 20px;
     margin: 40px 0px;
-    background: #009688;
+    background: #07a086;
+    display: flex;
+    justify-content: right;
+    cursor: pointer;
 }
 
 .table_wrapper {
     padding: 0px;
 }
 
-/* .editmatch_dialog_wrapper,
-.editplayers_dialog_wrapper {
-    padding: 20px;
-    width: 600px;
-} */
-
-
-.edit_wrapper {
-    /*  */
-    
+.admin_wrapper {
     height: 100%;
     min-height: 100%;
     display: -webkit-flex;
@@ -287,8 +265,11 @@ button {
     justify-content: center;
 }
 
-.edit_wrapper div {
-    /* margin: 0px 30px 0px 30px; */
+.admin_wrapper .border_wrapper {
+    padding: 30px 50px 0px 50px;
+    margin: -45px 30px 0px 30px;
     width: 97%;
-    /* border: 1px solid rgba(0, 0, 0, .3) */
+    height: 90%;
+    border: 1px solid #07a086;
+    background: #fdfbfb;
   }
