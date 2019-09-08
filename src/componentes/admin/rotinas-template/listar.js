@@ -24,7 +24,7 @@ class RotinasTemplate extends Component {
     };
 
     componentDidMount() {
-        firebaseRotinasTemplate.limitToLast(8).once('value').then((snapshot) => {
+        firebaseRotinasTemplate.limitToLast(16).once('value').then((snapshot) => {
             const rotinasTemplate = firebaseLooper(snapshot);
 
             this.setState({
@@ -46,6 +46,8 @@ class RotinasTemplate extends Component {
                                 <TableCell>Tipo Meta</TableCell>
                                 <TableCell>Meta</TableCell>
                                 <TableCell>Detalhes</TableCell>
+                                <TableCell>Editar</TableCell>
+                                <TableCell>Excluir</TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
@@ -56,7 +58,9 @@ class RotinasTemplate extends Component {
                                         <TableCell>{ rotina.descricao }</TableCell>
                                         <TableCell>{ rotina.tipoMeta }</TableCell>
                                         <TableCell>{ rotina.meta }</TableCell>
-                                        <TableCell><Link to={`/rotinasTemplate/detalhes/${rotina.id}`}>Detalhes</Link></TableCell>
+                                        <TableCell><Link to={`/painel/rotinasTemplate/detalhes/${rotina.id}`}>Detalhes</Link></TableCell>
+                                        <TableCell><Link to={`/painel/rotinasTemplate/editar/${rotina.id}`}>Editar</Link></TableCell>
+                                        <TableCell><Link to={`/painel/rotinasTemplate/editar/${rotina.id}`}>Excluir</Link></TableCell>
                                     </TableRow>
                                 ))
                                 : null

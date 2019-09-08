@@ -15,7 +15,11 @@ const AdminNav = () => {
             linkTo: '/painel/rotinasTemplate'
         },
         {
-            title: 'Editar Rotinas',
+            title: 'Adicionar Rotina',
+            linkTo: '/painel/rotinasTemplate/editar'
+        },
+        {
+            title: 'Editar Rotina',
             linkTo: '/painel/rotinasTemplate/editar'
         },
         {

@@ -179,7 +179,7 @@ class EditarRotinasTemplate extends Component {
         
 
         if (!rotinaId) {
-            // Adicionar rotina
+            getCategories(false, 'Adicionar Rotina');
         } 
         else {
             firebaseDB.ref(`rotinasTemplate/${rotinaId}`).once('value')
@@ -232,7 +232,11 @@ class EditarRotinasTemplate extends Component {
                 })
             }
             else {
-                // Adicionar Rotina
+                firebaseRotinasTemplate.push(dataToSubmit).then(() => {
+                    this.props.history.push('/painel/rotinasTemplate');
+                }).catch((e) => {
+                    this.setState({ formError: true });
+                })
             }       
 
         } 
