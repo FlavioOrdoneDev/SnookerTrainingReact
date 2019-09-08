@@ -22,7 +22,7 @@ export default class Rotinas extends Component {
 
     mostrarRotinas = (rotinas) => (
         <div>
-            <div className="header_wrapper">
+            <div className="title_wrapper">
                 Rotinas
             </div>
             <div class="cont">

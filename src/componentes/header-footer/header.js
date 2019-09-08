@@ -13,8 +13,8 @@ class Header extends Component {
                         <ul className="menu-area">
                             <li><a href="/">Home</a></li>
                             <li><a href="/categorias">Categorias</a></li>
-                            <li><a href="/rotinasTemplate">Rotinas</a></li>
-                            <li><a href="/treinosTemplate">Treinos</a></li>
+                            <li><a href="/rotinas">Rotinas</a></li>
+                            <li><a href="/treinos">Treinos</a></li>
                             <li><a href="/Resultados">Resultados</a></li>
                             <li><a href="/painel">Painel Admin</a></li>
                         </ul>                
