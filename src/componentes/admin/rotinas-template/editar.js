@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import AdminLayout from '../../layout/adminLayout';
 import FormField from '../../shared/formFields';
 import { validate } from '../../shared/shared';
+import Button from '@material-ui/core/Button';
 
 import { firebaseRotinasTemplate, firebaseCategorias, firebaseDB } from '../../../firebase';
 import { firebaseLooper } from '../../shared/shared';
@@ -295,10 +296,10 @@ class EditarRotinasTemplate extends Component {
                                 </div>
                                 : null
                             }
-                            <div className="admin_submit">
-                                <button onClick={(event) => this.submitForm(event)}>
+                            <div className="">
+                                <Button variant="contained" color="primary" onClick={(event) => this.submitForm(event)}>
                                     Salvar Rotina
-                                </button>
+                                </Button>
                             </div>
 
                             </form>

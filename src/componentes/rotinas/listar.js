@@ -57,9 +57,8 @@ export default class Rotinas extends Component {
     
         
     render() {        
-        return (           
-
-             this.mostrarRotinas(this.state.rotinas)                     
+        return ( 
+            this.mostrarRotinas(this.state.rotinas)                     
         );
     }
 }
